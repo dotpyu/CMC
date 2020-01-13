@@ -189,7 +189,7 @@ def main():
     train_dataset = ImageFolderInstance(data_folder, transform=train_transform, two_crop=args.moco)
     print(len(train_dataset))
     train_sampler = None
-    train_loader = torch.utils.data.DataLoader(
+    train_loader = torch.utils.data.DataLoader(-
         train_dataset, batch_size=args.batch_size, shuffle=(train_sampler is None),
         num_workers=args.num_workers, pin_memory=True, sampler=train_sampler)
 
